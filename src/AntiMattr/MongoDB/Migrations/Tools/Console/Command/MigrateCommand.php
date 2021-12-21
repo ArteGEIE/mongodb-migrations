@@ -25,7 +25,7 @@ class MigrateCommand extends AbstractCommand
 {
     protected static $defaultName = 'mongodb:migrations:migrate';
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Execute a migration to a specified version or the latest available version.')
@@ -53,7 +53,7 @@ EOT
      * @param \Symfony\Component\Console\Input\InputInterface
      * @param \Symfony\Component\Console\Output\OutputInterface
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $version = $input->getArgument('version');
 
