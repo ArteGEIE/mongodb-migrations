@@ -58,7 +58,7 @@ class Version<version> extends AbstractMigration
 }
 ';
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
                 ->setDescription('Generate a blank migration class.')
@@ -81,7 +81,7 @@ EOT
      * @param \Symfony\Component\Console\Input\InputInterface
      * @param \Symfony\Component\Console\Output\OutputInterface
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $configuration = $this->getMigrationConfiguration($input, $output);
 
